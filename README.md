@@ -1,6 +1,10 @@
 ElasticSearchClient
 ===================
 
+## Requires HTTP_Request2
+
+```pear install HTTP_Request2```
+
 ## Search
 ```php
 <?php
