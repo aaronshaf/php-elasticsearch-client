@@ -10,5 +10,5 @@ $elasticsearch->search(array(
     'query' => array(
         'term' => array('body' => 'word')
     )
-);
+));
 ```
