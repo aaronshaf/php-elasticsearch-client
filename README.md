@@ -1,4 +1,14 @@
 ElasticSearchClient
 ===================
 
-PHP 5.3 client for ElasticSearch
+## Search
+```php
+<?php
+$elasticsearch->search(array(
+    'index' => '[your index]',
+    'type' => '[your type]',
+    'query' => array(
+        'term' => array('body' => 'word')
+    )
+);
+```
