@@ -1,13 +1,7 @@
 <?php
 require_once "HTTP/Request2.php";
 
-if (!defined('CURL_OPERATION_TIMEDOUT'))
-    define('CURL_OPERATION_TIMEDOUT', 28);
-
 class ElasticSearch {	
-    const TIMEOUT = 5;
-    protected $ch;
-	
     public function __construct($host='localhost', $port=9200) {
         $this->host = $host;
         $this->port = $port;
