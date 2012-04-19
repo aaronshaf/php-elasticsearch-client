@@ -12,8 +12,6 @@ ElasticSearch PHP Client
 <?php
 require_once "HTTP/Request2.php";
 ```
-
-
 ## Set index
 ```php
 <?php
@@ -25,6 +23,8 @@ $elasticsearch->setIndex('[your index]');
 <?php
 $elasticsearch->setType('[your type]');
 ```
+
+Setting the index and/or type makes it unnecessary to include it in the following.
 
 ## Search
 ```php
@@ -65,4 +65,28 @@ $elasticsearch->index(array(
 ```php
 <?php
 $elasticsearch->get('[your id]');
+```
+
+## Custom request
+
+```php
+<?php
+$elasticsearch->request('/twitter/tweet/1','PUT',array(
+  "tweet" => array(
+    "_index" => array("enabled" => true)
+  )
+));
+```
+
+or if you for some reason prefer:
+
+```php
+<?php
+$elasticsearch->request('/twitter/tweet/1','PUT',<<<EOD
+{
+    "tweet" : {
+        "_index" : { "enabled" : true }
+    }
+}
+EOD)
 ```
