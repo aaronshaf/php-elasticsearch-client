@@ -5,6 +5,20 @@ ElasticSearchClient
 
 ```pear install HTTP_Request2```
 
+## Set index
+```php
+<?php
+$elasticsearch->setIndex('[your index]');
+?>
+```
+
+## Set type
+```php
+<?php
+$elasticsearch->setType('[your type]');
+?>
+```
+
 ## Search
 ```php
 <?php
@@ -27,5 +41,25 @@ $elasticsearch->search(array(
     'type' => '[your type]',
     'query' => 'word'
 ));
+?>
+```
+
+## Index
+```php
+<?php
+$elasticsearch->index(array(
+    'id' => '[your id]',
+    'data' => array(
+        'title' => 'Blog post title',
+        'tags' => array('ElasticSearch','PHP')
+    )
+));
+?>
+```
+
+## Get
+```php
+<?php
+$elasticsearch->get('[your id]');
 ?>
 ```
