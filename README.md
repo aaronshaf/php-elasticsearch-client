@@ -15,4 +15,15 @@ $elasticsearch->search(array(
         'term' => array('body' => 'word')
     )
 ));
+?>
+```
+or
+```php
+<?php
+$elasticsearch->search(array(
+    'index' => '[your index]',
+    'type' => '[your type]',
+    'query' => 'word'
+));
+?>
 ```
