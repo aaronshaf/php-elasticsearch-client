@@ -3,6 +3,8 @@ ElasticSearchClient
 
 ## Requires HTTP_Request2
 
+### Install it
+
 ```pear install HTTP_Request2```
 
 ## Set index
