@@ -17,7 +17,9 @@ $elasticsearch->search(array(
 ));
 ?>
 ```
+
 or
+
 ```php
 <?php
 $elasticsearch->search(array(
