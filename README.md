@@ -29,36 +29,36 @@ Setting the index and/or type makes it unnecessary to include it in the followin
 ## Search
 ```php
 <?php
-$elasticsearch->search(array(
+$elasticsearch->search([
     'index' => '[your index]',
     'type' => '[your type]',
     'query' => array(
         'term' => array('body' => 'word')
     )
-));
+]);
 ```
 
 or
 
 ```php
 <?php
-$elasticsearch->search(array(
+$elasticsearch->search([
     'index' => '[your index]',
     'type' => '[your type]',
     'query' => 'word'
-));
+]);
 ```
 
 ## Index
 ```php
 <?php
-$elasticsearch->index(array(
+$elasticsearch->index([
     'id' => '[your id]',
     'data' => array(
         'title' => 'Blog post title',
         'tags' => array('ElasticSearch','PHP')
     )
-));
+]);
 ```
 
 ## Get
@@ -71,22 +71,22 @@ $elasticsearch->get('[your id]');
 
 ```php
 <?php
-$elasticsearch->request('/twitter/tweet/1','PUT',array(
-  "tweet" => array(
-    "_index" => array("enabled" => true)
-  )
-));
+$elasticsearch->request(["twitter","tweet","1"],'PUT',[
+  "tweet" => [
+    "_index" => ["enabled" => true]
+  ]
+]);
 ```
 
-or if you for some reason prefer:
+Or if you so desire:
 
 ```php
 <?php
-$elasticsearch->request('/twitter/tweet/1','PUT',<<<EOD
+$elasticsearch->request('/twitter/tweet/1','PUT',<<<EOS
 {
     "tweet" : {
         "_index" : { "enabled" : true }
     }
 }
-EOD)
+EOS)
 ```
