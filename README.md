@@ -1,4 +1,4 @@
-ElasticSearchClient
+ElasticSearch PHP Client
 ===================
 
 ## Requires HTTP_Request2
