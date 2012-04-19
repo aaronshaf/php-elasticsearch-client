@@ -1,4 +1,5 @@
 <?php
+// Under MIT License
 require_once "HTTP/Request2.php";
 
 class ElasticSearch {
