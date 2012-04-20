@@ -12,6 +12,21 @@ ElasticSearch PHP Client
 <?php
 require_once "HTTP/Request2.php";
 ```
+
+## Instantiate it
+
+```php
+<?php
+$elasticsearch = new ElasticSearch(['host' => '[your host]']);
+```
+
+or if your host is 'localhost':
+
+```php
+<?php
+$elasticsearch = new ElasticSearch();
+```
+
 ## Set index
 ```php
 <?php
