@@ -59,15 +59,15 @@ class ElasticSearch {
 		} else if(substr($query,0,1) === '{'){
 			
 		} else if (is_string($query)){
-			$query = json_encode(array(
-				'query' => array(
-					'query_string' => array(
+			$query = json_encode([
+				'query' => [
+					'query_string' => [
 						'query' => $query
-					)
-				)
-			));
+					]
+				]
+			]);
 		}
-		return $this->request(array($this->stringifyList($index),$this->stringifyList($type),'_search'),$method,$query);
+		return $this->request([$this->stringifyList($index),$this->stringifyList($type),'_search'],$method,$query);
 	}
 	
 	private function stringifyList($list) {
@@ -107,7 +107,7 @@ class ElasticSearch {
 		} catch (HTTP_Request2_Exception $e) {
 		    echo 'Error: ' . $e->getMessage();
 		}
-		
-        return $body;
+
+        return json_decode($body,true);
     }
 }
